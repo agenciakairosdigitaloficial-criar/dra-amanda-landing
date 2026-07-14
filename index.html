@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Amanda Marinho | Assistência Técnica Médico-Legal para Advogados</title>
+    <meta name="description" content="Assistência Técnica Médico-Legal especializada para advogados. Pareceres técnicos, análise de prontuários, consultoria estratégica e suporte pericial para fortalecer sua atuação jurídica.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dra. Amanda Marinho | Assistência Técnica Médico-Legal">
+    <meta property="og:description" content="Assistência Técnica Médico-Legal especializada para advogados. Pareceres técnicos e suporte pericial para fortalecer sua atuação jurídica.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Dra. Amanda Marinho - Assistência Técnica Médico-Legal",
+        "description": "Assistência Técnica Médico-Legal especializada para advogados",
+        "telephone": "+55-21-99244-1649",
+        "email": "am.assistenciamedicolegal@gmail.com",
+        "priceRange": "$$",
+        "areaServed": "BR"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #223F71;
+            --primary-hover: #1B325A;
+            --white: #FFFFFF;
+            --gray-light: #F7F8FA;
+            --gray-border: #E9EDF3;
+            --text: #1D2433;
+            --text-muted: #5A6578;
+            --gold: #C9A962;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 16px 0;
+            box-shadow: 0 1px 0 var(--gray-border);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 50px;
+            width: auto;
+            transition: height 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-logo img {
+            height: 42px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .navbar-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .navbar-links a:hover {
+            color: var(--primary);
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--gray-light);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .mobile-menu-links a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu .btn {
+            margin-top: 40px;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-close svg {
+            width: 28px;
+            height: 28px;
+            color: var(--text);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--gray-light);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            color: var(--text);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .hero-crm {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 12px;
+            box-shadow: 0 32px 64px rgba(34, 63, 113, 0.12);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--gray-border);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        /* ===== SECTION BASE ===== */
+        section {
+            padding: 96px 0;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            color: var(--text);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            line-height: 1.8;
+        }
+
+        /* ===== DOR SECTION ===== */
+        .section-dor {
+            background: var(--gray-light);
+        }
+
+        .dor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 48px;
+        }
+
+        .dor-text p {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .dor-checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            margin-top: 32px;
+        }
+
+        .dor-checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9375rem;
+            color: var(--text);
+        }
+
+        .dor-checklist-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .dor-quote {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .dor-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ===== SERVICES ===== */
+        .section-servicos {
+            background: var(--gray-light);
+            padding: 100px 0;
+        }
+
+        .section-servicos .container {
+            max-width: 1200px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @supports (display: grid) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-border);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 4px 20px rgba(34, 63, 113, 0.06);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(34, 63, 113, 0.12);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        .service-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+
+        .service-card p {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 56px;
+        }
+
+        /* ===== SOBRE ===== */
+        .section-sobre {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .sobre-image {
+            position: relative;
+        }
+
+        .sobre-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 32px 64px rgba(34, 63, 113, 0.12);
+        }
+
+        .sobre-image::before {
+            content: '';
+            position: absolute;
+            top: -16px;
+            left: -16px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .sobre-content .section-title {
+            margin-bottom: 24px;
+        }
+
+        .sobre-content > p {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .formacao {
+            margin-top: 32px;
+            padding: 28px;
+            background: var(--gray-light);
+            border-radius: 12px;
+        }
+
+        .formacao h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .formacao ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .formacao li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9375rem;
+            color: var(--text);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .formacao li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .crm-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--primary);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-top: 24px;
+        }
+
+        /* Timeline de Carreira */
+        .timeline-wrapper {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid var(--gray-border);
+        }
+
+        .timeline-wrapper .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--gray-border);
+        }
+
+        .timeline-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-content .timeline-year {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            padding: 4px 12px;
+            background: rgba(34, 63, 113, 0.1);
+            border-radius: 4px;
+        }
+
+        .timeline-content h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .timeline-content p {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== DIFERENCIAIS ===== */
+        .section-diferenciais {
+            background: var(--white);
+        }
+
+        .diferenciais-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 56px;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .diferencial-card {
+            padding: 32px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .diferencial-card:hover {
+            background: var(--white);
+            box-shadow: 0 16px 40px rgba(34, 63, 113, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .diferencial-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--gray-border);
+        }
+
+        .diferencial-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .diferencial-card h3 {
+            font-size: 1.125rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .diferencial-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== ESCRITÓRIOS ===== */
+        .section-escritorios {
+            background: var(--gray-light);
+        }
+
+        .escritorios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .escritorios-content h2 {
+            margin-bottom: 24px;
+        }
+
+        .escritorios-content p {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .escritorios-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 32px 64px rgba(34, 63, 113, 0.12);
+        }
+
+        /* ===== NÚMEROS ===== */
+        .section-numeros {
+            background: var(--primary);
+            padding: 80px 0;
+        }
+
+        .numeros-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .numero-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .numero-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .numero-value {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.75rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .numero-label {
+            display: block;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        /* ===== COMO FUNCIONA ===== */
+        .section-processo {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .processo-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 56px;
+            position: relative;
+        }
+
+        .processo-timeline::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: var(--gray-border);
+        }
+
+        .processo-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .processo-number {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 24px rgba(34, 63, 113, 0.25);
+        }
+
+        .processo-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .processo-content p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        .processo-cta {
+            text-align: center;
+            margin-top: 56px;
+        }
+
+        .processo-cta .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== FAQ ===== */
+        .section-faq {
+            background: var(--white);
+        }
+
+        .faq-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 56px;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question span {
+            font-size: 1.0625rem;
+            color: var(--text);
+            font-weight: 500;
+            padding-right: 24px;
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 24px;
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            background: var(--primary);
+            padding: 100px 0;
+        }
+
+        .cta-final .container {
+            text-align: center;
+            max-width: 720px;
+        }
+
+        .cta-final h2 {
+            color: var(--white);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            margin-bottom: 24px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .btn-cta-final {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: var(--white);
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .btn-cta-final svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-cta-final:hover {
+            background: var(--gray-light);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand img {
+            height: 48px;
+            margin-bottom: 16px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-crm {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-col h4 {
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .sobre-image img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .diferenciais-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .escritorios-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .escritorios-image {
+                order: -1;
+            }
+
+            .numeros-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .processo-timeline {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .processo-timeline::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 64px 0;
+            }
+
+            .navbar-links,
+            .navbar .btn {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 80px;
+                min-height: auto;
+                padding-bottom: 64px;
+            }
+
+            .hero-title {
+                font-size: 1.875rem;
+            }
+
+            .hero-image::before {
+                display: none;
+            }
+
+            .dor-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .dor-checklist {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .numeros-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .processo-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .processo-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .processo-number {
+                margin: 0 auto 16px;
+                width: 56px;
+                height: 56px;
+                font-size: 1.25rem;
+            }
+
+            .processo-content h3 {
+                font-size: 1rem;
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .sobre-image {
+                order: -1;
+            }
+
+            .sobre-image img {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .cta-final {
+                padding: 64px 0;
+            }
+
+            .cta-final h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="logo.png" alt="Dra. Amanda Marinho">
+            </a>
+            <div class="navbar-menu">
+                <ul class="navbar-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica." class="btn btn-primary" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fechar menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica." class="btn btn-primary" target="_blank">
+            Falar no WhatsApp
+        </a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    Assistência Técnica Médico-Legal
+                </span>
+                <h1 class="hero-title">A diferença entre ganhar ou perder uma ação médica pode estar em um detalhe que apenas um médico consegue identificar.</h1>
+                <p class="hero-text">Quando um processo depende da interpretação correta de um prontuário, de uma conduta médica ou de um laudo pericial, não basta conhecimento jurídico.</p>
+                <p class="hero-text">É preciso respaldo técnico. A Dra. Amanda Marinho atua ao lado de advogados oferecendo análise médico-legal estratégica, pareceres técnicos fundamentados e assistência pericial para fortalecer teses jurídicas com base científica.</p>
+                <p class="hero-crm">CRM-RJ 52.0110812-3</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20do%20meu%20caso." class="btn btn-primary" target="_blank">
+                        Solicitar Análise Técnica
+                    </a>
+                    <a href="#servicos" class="btn btn-outline">
+                        Conheça os Serviços
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="amanda-1.jpg" alt="Dra. Amanda Marinho - Assistente Técnica Médico-Legal" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Dor -->
+    <section class="section-dor" id="dor">
+        <div class="container">
+            <h2 class="section-title">Quantas boas teses jurídicas deixam de prosperar por falta de uma análise médica especializada?</h2>
+            <div class="dor-grid">
+                <div class="dor-content">
+                    <p>Em processos envolvendo medicina, muitas decisões são tomadas antes mesmo da audiência.</p>
+                    <p>Uma interpretação equivocada de um prontuário. Um nexo causal mal fundamentado. Uma perícia superficial. Ou simplesmente a ausência de suporte técnico.</p>
+                    <p>Tudo isso pode comprometer uma ação que tinha potencial para ser vencedora.</p>
+                    <p>A medicina possui uma linguagem própria. Traduzir essa linguagem para argumentos jurídicos sólidos é exatamente onde nasce a vantagem estratégica.</p>
+                </div>
+                <div class="dor-checklist-wrapper">
+                    <div class="dor-checklist">
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Prontuários complexos</span>
+                        </div>
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Condutas médicas difíceis</span>
+                        </div>
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Laudos superficiais</span>
+                        </div>
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Falta de tempo</span>
+                        </div>
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Quesitos mal formulados</span>
+                        </div>
+                        <div class="dor-checklist-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Falta de embasamento científico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="dor-quote">
+                "A medicina é complexa. A estratégia jurídica não precisa ser."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section-servicos" id="servicos">
+        <div class="container">
+            <span class="section-label">Serviços</span>
+            <h2 class="section-title">Soluções Médico-Legais para fortalecer sua atuação processual</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.91.37 4.15 1.02"/>
+                            <path d="M21 3v4h-4"/>
+                        </svg>
+                    </div>
+                    <h3>Análise de Viabilidade Técnica</h3>
+                    <p>Avaliação criteriosa da documentação antes do ajuizamento da ação para verificar se os elementos médicos sustentam a tese jurídica.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Parecer Técnico Médico-Legal</h3>
+                    <p>Produção de pareceres fundamentados em literatura científica e elaborados para auxiliar diretamente na estratégia processual.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Assistência Técnica Pericial</h3>
+                    <p>Atuação durante toda a fase pericial, incluindo estudo dos autos, elaboração de quesitos, acompanhamento da perícia, análise crítica do laudo judicial e manifestações técnicas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3>Análise de Prontuários</h3>
+                    <p>Leitura técnica detalhada para identificar inconsistências, cronologia dos fatos, falhas assistenciais e elementos relevantes ao processo.</p>
+                </div>
+                <div class="service-card service-card-featured">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Consultoria Médico-Legal Estratégica</h3>
+                    <p>Suporte contínuo ao advogado durante todas as etapas da demanda para auxiliar na interpretação técnica e definição da melhor estratégia jurídica.</p>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20do%20meu%20caso." class="btn btn-primary" target="_blank">
+                    Solicitar Análise do Caso
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Dra. Amanda -->
+    <section class="section-sobre" id="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-image">
+                    <img src="amanda-2.jpg" alt="Dra. Amanda Marinho - Médica Assistente Técnica" loading="lazy">
+                </div>
+                <div class="sobre-content">
+                    <span class="section-label">Sobre</span>
+                    <h2 class="section-title">Conheça a Dra. Amanda Marinho</h2>
+                    <p>A Dra. Amanda Marinho atua na interface entre Medicina e Direito, oferecendo suporte técnico especializado para escritórios de advocacia em demandas médico-legais.</p>
+                    <p>Sua experiência reúne quase 10 anos em Medicina de Emergência e Terapia Intensiva, atuação em hospitais de alta complexidade e experiência como Perita Judicial do Tribunal de Justiça do Estado do Rio de Janeiro.</p>
+                    <p>Sua atuação permite identificar inconsistências, avaliar condutas médicas, analisar prontuários e produzir pareceres técnicos fundamentados em evidências científicas.</p>
+
+                    <div class="formacao">
+                        <h4>Formação</h4>
+                        <ul>
+                            <li>Medicina — Universidade Unigranrio</li>
+                            <li>Terapia Intensiva — Hospital Israelita Albert Einstein</li>
+                            <li>Medicina Legal e Perícias Médicas</li>
+                            <li>Formação em Perícias Médicas</li>
+                            <li>Pós-graduação em Psiquiatria (em andamento)</li>
+                        </ul>
+                    </div>
+                    <div class="crm-badge">
+                        <span>CRM-RJ 52.0110812-3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline de Carreira -->
+            <div class="timeline-wrapper">
+                <h3 class="timeline-title">Trajetória Profissional</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2015</span>
+                            <h4>Graduação em Medicina</h4>
+                            <p>Formação pela Universidade Unigranrio</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2016-2024</span>
+                            <h4>Medicina de Emergência e UTI</h4>
+                            <p>Quase 10 anos de atuação em hospitais de alta complexidade</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">Einstein</span>
+                            <h4>Especialização em Terapia Intensiva</h4>
+                            <p>Hospital Israelita Albert Einstein</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">Atual</span>
+                            <h4>Perita Judicial TJRJ</h4>
+                            <p>Assistência Técnica Médico-Legal para Advogados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="section-diferenciais" id="diferenciais">
+        <div class="container">
+            <span class="section-label">Diferenciais</span>
+            <h2 class="section-title">Por que advogados confiam na Dra. Amanda</h2>
+            <div class="diferenciais-grid">
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Medicina traduzida para o Direito</h3>
+                    <p>Linguagem técnica convertida em argumentos jurídicos claros e objetivos</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Experiência Clínica</h3>
+                    <p>Quase uma década em emergência e UTI em hospitais de alta complexidade</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Visão Pericial</h3>
+                    <p>Experiência como Perita Judicial do TJRJ permite antecipar questionamentos</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Fundamentação Científica</h3>
+                    <p>Pareceres embasados em literatura médica atualizada e evidências</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Comunicação Clara</h3>
+                    <p>Relatórios objetivos e acessíveis para uso direto em peças processuais</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Atuação Estratégica</h3>
+                    <p>Foco em resultados que fortaleçam a tese jurídica do advogado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para Escritórios -->
+    <section class="section-escritorios">
+        <div class="container">
+            <div class="escritorios-grid">
+                <div class="escritorios-content">
+                    <span class="section-label">Para Escritórios</span>
+                    <h2 class="section-title">Seu escritório cuida da estratégia jurídica. A medicina fica por minha conta.</h2>
+                    <p>Processos envolvendo erro médico, responsabilidade civil, curatela, incapacidade civil ou demandas psiquiátricas exigem conhecimento técnico especializado.</p>
+                    <p>Ao atuar em conjunto com uma médica perita, o advogado reduz incertezas, fortalece sua argumentação e conduz o processo com muito mais segurança.</p>
+                    <a href="https://wa.me/5521992441649?text=Olá%20Dra.%20Amanda,%20tenho%20interesse%20em%20uma%20parceria%20para%20meu%20escritório." class="btn btn-primary" target="_blank" style="margin-top: 24px;">
+                        Falar sobre Parceria
+                    </a>
+                </div>
+                <div class="escritorios-image">
+                    <img src="amanda-3.jpg" alt="Dra. Amanda Marinho - Parceria com Escritórios" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Números de Autoridade -->
+    <section class="section-numeros">
+        <div class="container">
+            <div class="numeros-grid">
+                <div class="numero-card">
+                    <span class="numero-value">~10</span>
+                    <span class="numero-label">Anos de experiência clínica</span>
+                </div>
+                <div class="numero-card">
+                    <span class="numero-value">TJRJ</span>
+                    <span class="numero-label">Perita Judicial</span>
+                </div>
+                <div class="numero-card">
+                    <span class="numero-value">Alta</span>
+                    <span class="numero-label">Complexidade hospitalar</span>
+                </div>
+                <div class="numero-card">
+                    <span class="numero-value">100%</span>
+                    <span class="numero-label">Foco em Advogados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="section-processo" id="contato">
+        <div class="container">
+            <span class="section-label">Processo</span>
+            <h2 class="section-title">Como funciona a consultoria</h2>
+            <div class="processo-timeline">
+                <div class="processo-item">
+                    <div class="processo-number">01</div>
+                    <div class="processo-content">
+                        <h3>Envio da documentação</h3>
+                        <p>O advogado encaminha prontuários, documentos médicos e peças processuais para análise inicial.</p>
+                    </div>
+                </div>
+                <div class="processo-item">
+                    <div class="processo-number">02</div>
+                    <div class="processo-content">
+                        <h3>Análise Técnico-Científica</h3>
+                        <p>Avaliação detalhada da documentação médica com olhar clínico e pericial.</p>
+                    </div>
+                </div>
+                <div class="processo-item">
+                    <div class="processo-number">03</div>
+                    <div class="processo-content">
+                        <h3>Parecer e Estratégia</h3>
+                        <p>Produção de parecer técnico fundamentado em evidências científicas atualizadas.</p>
+                    </div>
+                </div>
+                <div class="processo-item">
+                    <div class="processo-number">04</div>
+                    <div class="processo-content">
+                        <h3>Acompanhamento Especializado</h3>
+                        <p>Suporte durante toda a fase pericial quando necessário, incluindo perícias e manifestações.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="processo-cta">
+                <a href="https://wa.me/5521992441649?text=Olá%20Dra.%20Amanda,%20gostaria%20de%20solicitar%20uma%20análise%20técnica." class="btn btn-primary" target="_blank">
+                    Solicitar Análise Técnica
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-faq">
+        <div class="container">
+            <span class="section-label">Dúvidas Frequentes</span>
+            <h2 class="section-title">Perguntas frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quais processos podem receber assistência técnica?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Atuo em processos que envolvam questões médicas, como erro médico, responsabilidade civil médica, incapacidade civil, curatela, interdição, demandas psiquiátricas, análise de condutas médicas, interpretação de prontuários e laudos periciais.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>O atendimento é exclusivo para advogados?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim. Minha atuação é voltada exclusivamente para advogados, escritórios de advocacia e departamentos jurídicos que necessitam de suporte técnico médico-legal em suas demandas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Em qual fase do processo posso contratar?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Em qualquer fase. Desde a análise de viabilidade antes do ajuizamento, passando pela produção de provas, fase pericial, até recursos e sustentações orais que necessitem de embasamento técnico.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A Dra. Amanda atua como Assistente Técnica?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim. Atuo como Assistente Técnica da parte, acompanhando perícias judiciais, elaborando quesitos, analisando laudos do perito judicial e produzindo manifestações técnicas fundamentadas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual o prazo para elaboração dos pareceres?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O prazo varia conforme a complexidade do caso e o volume de documentação. Após análise inicial, informo o prazo estimado. Em situações urgentes, é possível negociar prazos diferenciados.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona a contratação?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O primeiro passo é entrar em contato via WhatsApp para uma conversa inicial sobre o caso. Após entender a demanda, apresento uma proposta de trabalho com escopo, prazo e valores. Tudo de forma clara e transparente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Grandes causas exigem provas sólidas.</h2>
+            <p>Quando a medicina sustenta a estratégia jurídica, decisões deixam de ser suposições e passam a ser fundamentadas em evidências. Conte com uma assistência médico-legal especializada para transformar informações médicas complexas em argumentos técnicos sólidos e juridicamente relevantes.</p>
+            <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20do%20meu%20caso." class="btn-cta-final">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Falar com a Dra. Amanda
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Dra. Amanda Marinho">
+                    <p>Dra. Amanda Marinho<br>Médica | Assistente Técnica Médico-Legal | Perita Judicial</p>
+                    <span class="footer-crm">CRM-RJ 52.0110812-3</span>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#servicos">Análise de Viabilidade</a></li>
+                        <li><a href="#servicos">Parecer Técnico</a></li>
+                        <li><a href="#servicos">Assistência Pericial</a></li>
+                        <li><a href="#servicos">Análise de Prontuários</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="tel:+5521992441649">(21) 99244-1649</a></li>
+                        <li><a href="mailto:am.assistenciamedicolegal@gmail.com">am.assistenciamedicolegal@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Dra. Amanda Marinho. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica." class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Detecta mobile
+        const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+
+        // Registra GSAP ScrollTrigger
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
+        // Lenis Smooth Scroll (apenas desktop)
+        if (typeof Lenis !== 'undefined' && !isMobile) {
+            try {
+                const lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smoothWheel: true,
+                    syncTouch: false,
+                });
+
+                if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                    lenis.on('scroll', ScrollTrigger.update);
+                    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+                    gsap.ticker.lagSmoothing(0);
+                }
+
+                // Scroll para links internos
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            lenis.scrollTo(target);
+                        }
+                    });
+                });
+            } catch (e) {
+                console.log('Lenis não carregou, usando scroll nativo');
+            }
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Fecha todos os outros
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+
+                // Toggle o atual
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // GSAP Animations
+        if (typeof gsap !== 'undefined') {
+            // Hero animation
+            gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 });
+            gsap.from('.hero-title', { opacity: 0, y: 30, duration: 1, delay: 0.4 });
+            gsap.from('.hero-text', { opacity: 0, y: 30, duration: 0.8, delay: 0.6, stagger: 0.1 });
+            gsap.from('.hero-crm', { opacity: 0, y: 20, duration: 0.6, delay: 0.8 });
+            gsap.from('.hero-buttons', { opacity: 0, y: 20, duration: 0.6, delay: 1 });
+            gsap.from('.hero-image', { opacity: 0, x: 50, duration: 1, delay: 0.6 });
+
+            // ScrollTrigger animations
+            if (typeof ScrollTrigger !== 'undefined') {
+                // Seções gerais
+                gsap.utils.toArray('section:not(.hero)').forEach(section => {
+                    const elements = section.querySelectorAll('.section-label, .section-title, .section-subtitle, p, .service-card, .diferencial-card, .numero-card, .processo-item, .faq-item, .timeline-item, .dor-checklist-item, .formacao li');
+
+                    gsap.from(elements, {
+                        opacity: 0,
+                        y: 40,
+                        duration: 0.8,
+                        stagger: 0.08,
+                        ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+                });
+
+                // Imagens
+                gsap.utils.toArray('.sobre-image, .escritorios-image').forEach(img => {
+                    gsap.from(img, {
+                        opacity: 0,
+                        scale: 0.95,
+                        duration: 1,
+                        ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                        scrollTrigger: {
+                            trigger: img,
+                            start: 'top 85%'
+                        }
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html>
