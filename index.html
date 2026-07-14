@@ -1376,6 +1376,26 @@
                 transform: translateY(0);
             }
         }
+        /* Fallback - garante que elementos apareçam mesmo sem JS */
+.service-card,
+.diferencial-card,
+.numero-card,
+.processo-item,
+.faq-item,
+.timeline-item,
+.dor-checklist-item,
+.formacao li,
+.section-label,
+.section-title,
+.section-subtitle,
+.sobre-image,
+.escritorios-image,
+.dor-quote,
+.crm-badge {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
     </style>
 </head>
 <body>
