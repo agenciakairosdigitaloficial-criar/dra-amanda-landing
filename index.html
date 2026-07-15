@@ -100,14 +100,14 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 12px 0;
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .navbar.scrolled {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            padding: 16px 0;
+            padding: 12px 0;
             box-shadow: 0 1px 0 var(--gray-border);
         }
 
@@ -118,13 +118,13 @@
         }
 
         .navbar-logo img {
-            height: 50px;
+            height: 100px;
             width: auto;
             transition: height 0.3s ease;
         }
 
         .navbar.scrolled .navbar-logo img {
-            height: 42px;
+            height: 80px;
         }
 
         .navbar-menu {
@@ -308,105 +308,91 @@
         }
 
         .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            display: flex;
+            justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
         .hero-content {
-            max-width: 560px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: var(--gray-light);
             border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 0.875rem;
+            font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--primary);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .hero-title {
-            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             color: var(--text);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             letter-spacing: -0.02em;
+            font-weight: 600;
+            line-height: 1.25;
         }
 
         .hero-text {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
 
         .hero-crm {
-            font-size: 0.875rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 32px;
+            display: none;
         }
 
         .hero-buttons {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
         }
 
         .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 520px;
-            border-radius: 12px;
-            box-shadow: 0 32px 64px rgba(34, 63, 113, 0.12);
-        }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100%;
-            height: 100%;
-            border: 1px solid var(--gray-border);
-            border-radius: 12px;
-            z-index: -1;
+            display: none;
         }
 
         /* ===== SECTION BASE ===== */
         section {
-            padding: 96px 0;
+            padding: 120px 0;
         }
 
         .section-label {
             display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--primary);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-size: clamp(2rem, 4vw, 3.25rem);
             color: var(--text);
-            margin-bottom: 20px;
+            margin-bottom: 28px;
             letter-spacing: -0.02em;
+            font-weight: 600;
+            line-height: 1.2;
         }
 
         .section-subtitle {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
             max-width: 640px;
             line-height: 1.8;
@@ -426,53 +412,54 @@
         }
 
         .dor-text p {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.8;
         }
 
         .dor-checklist {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px 24px;
-            margin-top: 32px;
+            gap: 16px 32px;
+            margin-top: 40px;
         }
 
         .dor-checklist-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9375rem;
+            gap: 12px;
+            font-size: 1rem;
             color: var(--text);
         }
 
         .dor-checklist-item svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             color: var(--primary);
             flex-shrink: 0;
         }
 
         .dor-quote {
             background: var(--white);
-            padding: 40px;
+            padding: 48px;
             border-radius: 12px;
-            border-left: 3px solid var(--primary);
+            border-left: 4px solid var(--primary);
+            margin-top: 40px;
         }
 
         .dor-quote p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-style: italic;
             color: var(--text);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* ===== SERVICES ===== */
         .section-servicos {
             background: var(--gray-light);
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .section-servicos .container {
@@ -481,20 +468,20 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 56px;
         }
 
         @supports (display: grid) {
             .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 32px;
+            padding: 48px 40px;
             border-radius: 12px;
             border: 1px solid var(--gray-border);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -508,14 +495,14 @@
         }
 
         .service-icon {
-            width: 56px;
-            height: 56px;
+            width: 64px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--primary);
             border-radius: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .service-card:hover .service-icon {
@@ -524,35 +511,35 @@
         }
 
         .service-icon svg {
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             color: var(--white);
             transition: all 0.3s ease;
         }
 
         .service-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.375rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 14px;
+            margin-bottom: 18px;
         }
 
         .service-card p {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            line-height: 1.75;
+            line-height: 1.8;
         }
 
         .services-cta {
             text-align: center;
-            margin-top: 56px;
+            margin-top: 64px;
         }
 
         /* ===== SOBRE ===== */
         .section-sobre {
             background: var(--white);
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .sobre-grid {
@@ -586,13 +573,13 @@
         }
 
         .sobre-content .section-title {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .sobre-content > p {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.8;
         }
 
@@ -743,22 +730,23 @@
         /* ===== DIFERENCIAIS ===== */
         .section-diferenciais {
             background: var(--white);
+            padding: 120px 0;
         }
 
         .diferenciais-header {
             text-align: center;
             max-width: 600px;
-            margin: 0 auto 56px;
+            margin: 0 auto 64px;
         }
 
         .diferenciais-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .diferencial-card {
-            padding: 32px;
+            padding: 40px;
             background: var(--gray-light);
             border-radius: 12px;
             text-align: center;
@@ -772,38 +760,40 @@
         }
 
         .diferencial-icon {
-            width: 56px;
-            height: 56px;
+            width: 64px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 24px;
             background: var(--white);
             border-radius: 12px;
             border: 1px solid var(--gray-border);
         }
 
         .diferencial-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             color: var(--primary);
         }
 
         .diferencial-card h3 {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             color: var(--text);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .diferencial-card p {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* ===== ESCRITÓRIOS ===== */
         .section-escritorios {
             background: var(--gray-light);
+            padding: 120px 0;
         }
 
         .escritorios-grid {
@@ -814,13 +804,13 @@
         }
 
         .escritorios-content h2 {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .escritorios-content p {
-            font-size: 1.0625rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.8;
         }
 
@@ -833,7 +823,7 @@
         /* ===== NÚMEROS ===== */
         .section-numeros {
             background: var(--primary);
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .numeros-grid {
@@ -844,7 +834,7 @@
 
         .numero-card {
             text-align: center;
-            padding: 40px 24px;
+            padding: 48px 32px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -859,30 +849,30 @@
         .numero-value {
             display: block;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.75rem;
+            font-size: 3rem;
             font-weight: 600;
             color: var(--white);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .numero-label {
             display: block;
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
         }
 
         /* ===== COMO FUNCIONA ===== */
         .section-processo {
             background: var(--white);
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .processo-timeline {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            margin-top: 56px;
+            gap: 40px;
+            margin-top: 64px;
             position: relative;
         }
 
@@ -902,16 +892,16 @@
         }
 
         .processo-number {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
+            margin: 0 auto 32px;
             background: var(--primary);
             border-radius: 50%;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--white);
             position: relative;
@@ -921,23 +911,23 @@
 
         .processo-content h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
+            font-size: 1.375rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
 
         .processo-content p {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            line-height: 1.65;
-            max-width: 240px;
+            line-height: 1.7;
+            max-width: 260px;
             margin: 0 auto;
         }
 
         .processo-cta {
             text-align: center;
-            margin-top: 56px;
+            margin-top: 64px;
         }
 
         .processo-cta .btn-primary {
@@ -949,12 +939,13 @@
         /* ===== FAQ ===== */
         .section-faq {
             background: var(--white);
+            padding: 120px 0;
         }
 
         .faq-header {
             text-align: center;
             max-width: 600px;
-            margin: 0 auto 56px;
+            margin: 0 auto 64px;
         }
 
         .faq-grid {
@@ -971,7 +962,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
+            padding: 28px 0;
             background: none;
             border: none;
             cursor: pointer;
@@ -1008,41 +999,42 @@
         }
 
         .faq-answer p {
-            padding-bottom: 24px;
-            font-size: 0.9375rem;
+            padding-bottom: 28px;
+            font-size: 1rem;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* ===== CTA FINAL ===== */
         .cta-final {
             background: var(--primary);
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .cta-final .container {
             text-align: center;
-            max-width: 720px;
+            max-width: 800px;
         }
 
         .cta-final h2 {
             color: var(--white);
-            font-size: clamp(1.75rem, 4vw, 2.75rem);
-            margin-bottom: 24px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 28px;
+            font-weight: 600;
         }
 
         .cta-final p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1.0625rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
 
         .btn-cta-final {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 18px 40px;
+            padding: 18px 44px;
             background: var(--white);
             color: var(--primary);
             font-family: 'Inter', sans-serif;
@@ -1180,8 +1172,9 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero .container {
-                grid-template-columns: 1fr;
-                gap: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .hero-content {
@@ -1191,15 +1184,6 @@
 
             .hero-buttons {
                 justify-content: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .hero-image img {
-                max-width: 400px;
-                margin: 0 auto;
             }
 
             .services-grid {
@@ -1383,67 +1367,18 @@
 .processo-item,
 .faq-item,
 .timeline-item,
-.timeline-wrapper,
-.timeline,
-.timeline-marker,
-.timeline-content,
-.timeline-year,
 .dor-checklist-item,
-.dor-content,
-.dor-content p,
-.dor-checklist,
-.dor-checklist-wrapper,
-.formacao,
 .formacao li,
 .section-label,
 .section-title,
 .section-subtitle,
 .sobre-image,
-.sobre-content,
-.sobre-content > p,
-.sobre-grid,
 .escritorios-image,
-.escritorios-content,
-.escritorios-content p,
-.escritorios-grid,
 .dor-quote,
-.crm-badge,
-.hero-badge,
-.hero-title,
-.hero-text,
-.hero-crm,
-.hero-buttons,
-.hero-image,
-.services-grid,
-.diferenciais-grid,
-.numeros-grid,
-.processo-timeline,
-.processo-content,
-.processo-number,
-.faq-grid,
-.footer-grid,
-.footer-brand,
-.footer-col {
+.crm-badge {
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
-}
-
-/* Força display dos grids */
-.services-grid,
-.diferenciais-grid,
-.numeros-grid,
-.processo-timeline,
-.timeline {
-    display: grid !important;
-}
-
-/* Força visibility das sections */
-section,
-section > .container,
-section > .container > * {
-    visibility: visible !important;
-    opacity: 1 !important;
 }
     </style>
 </head>
@@ -1507,7 +1442,6 @@ section > .container > * {
                 <h1 class="hero-title">A diferença entre ganhar ou perder uma ação médica pode estar em um detalhe que apenas um médico consegue identificar.</h1>
                 <p class="hero-text">Quando um processo depende da interpretação correta de um prontuário, de uma conduta médica ou de um laudo pericial, não basta conhecimento jurídico.</p>
                 <p class="hero-text">É preciso respaldo técnico. A Dra. Amanda Marinho atua ao lado de advogados oferecendo análise médico-legal estratégica, pareceres técnicos fundamentados e assistência pericial para fortalecer teses jurídicas com base científica.</p>
-                <p class="hero-crm">CRM-RJ 52.0110812-3</p>
                 <div class="hero-buttons">
                     <a href="https://wa.me/5521992441649?text=Olá,%20gostaria%20de%20solicitar%20uma%20análise%20técnica%20do%20meu%20caso." class="btn btn-primary" target="_blank">
                         Solicitar Análise Técnica
@@ -1517,67 +1451,6 @@ section > .container > * {
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="amanda-1.jpg" alt="Dra. Amanda Marinho - Assistente Técnica Médico-Legal" loading="eager">
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Dor -->
-    <section class="section-dor" id="dor">
-        <div class="container">
-            <h2 class="section-title">Quantas boas teses jurídicas deixam de prosperar por falta de uma análise médica especializada?</h2>
-            <div class="dor-grid">
-                <div class="dor-content">
-                    <p>Em processos envolvendo medicina, muitas decisões são tomadas antes mesmo da audiência.</p>
-                    <p>Uma interpretação equivocada de um prontuário. Um nexo causal mal fundamentado. Uma perícia superficial. Ou simplesmente a ausência de suporte técnico.</p>
-                    <p>Tudo isso pode comprometer uma ação que tinha potencial para ser vencedora.</p>
-                    <p>A medicina possui uma linguagem própria. Traduzir essa linguagem para argumentos jurídicos sólidos é exatamente onde nasce a vantagem estratégica.</p>
-                </div>
-                <div class="dor-checklist-wrapper">
-                    <div class="dor-checklist">
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Prontuários complexos</span>
-                        </div>
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Condutas médicas difíceis</span>
-                        </div>
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Laudos superficiais</span>
-                        </div>
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Falta de tempo</span>
-                        </div>
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Quesitos mal formulados</span>
-                        </div>
-                        <div class="dor-checklist-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Falta de embasamento científico</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <blockquote class="dor-quote">
-                "A medicina é complexa. A estratégia jurídica não precisa ser."
-            </blockquote>
         </div>
     </section>
 
